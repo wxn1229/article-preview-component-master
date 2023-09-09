@@ -34,6 +34,7 @@ body{
   background-color: white;
   border-radius: 16px;
   overflow: hidden;
+  position:relative;
 }
 
 .top, .bottom{
@@ -58,6 +59,7 @@ body{
   justify-content: space-between;
   }
 
+
 .content{
   margin-left: 20px;
   margin-top: 20px;
@@ -80,9 +82,13 @@ body{
   
 }
 
+.foot{
+  height: 70px;
+
+}
 .normal{
   display: flex;
-  height: 100px;
+  height: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -109,7 +115,7 @@ body{
   justify-content: center;
   align-items: center;
   cursor:  pointer;
-  margin-right: 20px;
+  margin-right: 35px;
 }
 
 .name{
@@ -136,22 +142,161 @@ body{
 }
 
 .name p{
-  color: hsl(214, 17%, 51%)
+  color: hsl(214, 17%, 51%);
 
 }
 
 
-
+.foot{
+  background-color: hsl(217, 19%, 35%);
+  background-color: white;
+}
 
 .active{
-  background-color: hsl(217, 19%, 35%);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.share{
+  margin-left: 35px;
+  
+}
+
+.share h3{
+  letter-spacing: 4px;
+  color: #a0acc2;
+  font-weight: 700;
+}
+
+.icon{
+  width: 150px;
+}
+
+
+
+#twitter{
+  margin: 0px 10px;
+}
+
+.act-btn {
+  background-color: hsl(214, 17%, 51%);
+
+
+}
+
+.foot{
+  transition: background-color 0.5s ease;
+}
+.normal{
+  max-height: 1000px;
+  overflow: hidden;
+}
+
+.active{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.active *, .normal *{
+  transition: opacity 0.5s ease;
+}
+
+.active *{
+  opacity: 0;
+
+}
+
+.normal *{
+  opacity: 1 ;
   
 
 }
 
-.active{
-  display: none;
-}
-.normal{
-  display: flex;
+
+@media only screen and (min-width: 900px){
+  .container{
+    width: 700px;
+    height: 300px;
+    flex-direction: row;
+    overflow: visible;
+  }
+
+  .top{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px 0px 0px 16px;
+  }
+  
+  .bottom{
+    width: 60%;
+    height: 100%;
+    justify-content: space-evenly;
+    padding: 0px 20px;
+    overflow: hidden;
+  }
+
+  .content h1{
+    font-size: 18px;
+    font-weight:bolder;
+
+  }
+
+  .desktopbox{
+    
+    width: 250px;
+    height: 50px;
+    background-color: hsl(217, 19%, 35%);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 0px 5px;
+    border-radius: 12px;
+    transform: translate(51px ,164px);
+    opacity: 0;
+    box-shadow: 6px 6px 15px hsl(216, 18%, 50%);
+    transition: opacity 0.5s ease;
+    
+  }
+  
+  .desktopbox::before{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent hsl(217, 19%, 35%) transparent;
+    transform: translateX(-50%) rotate(180deg);
+
+    opacity: 0.96;
+
+
+  }
+  
+  .desktopbox .icon{
+    width: 45%;
+    margin: 0px;
+
+  }
+
+  .desktopbox .share{
+    width: 35%;
+  }
+
+  .desktopbox .share h3{
+    display: inline-block;
+  } 
+
+  
 }
